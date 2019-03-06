@@ -1,0 +1,23 @@
+1	If File Does Not Exist ("C:\Users\SLip023\Desktop\AA Files\ClientDB.xlsx")  Then  
+2	     Message Box: "ClientDB.xlsx file not found! Unable to continue."
+3	     Stop The Current Task
+4	End If
+5	Excel: Open Spreadsheet "C:\Users\SLip023\Desktop\AA Files\ClientDB.xlsx". ActiveSheet: "Default". Contains Header. Session: Default
+6	Excel: Get All Cells Session: Default
+7	Open "https://www.roboform.com/filling-test-all-fields"
+8	Begin Error Handling; Action: Continue; Options:  Task Status: Pass
+9	     Comment: This is the cookies privacy policy notice
+10	     Click on 'Got it' Other HTML Control in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+11	End Error Handling
+12	Start Loop "Each row in an Excel dataset of Session: Default"
+13	     Comment: Please enter your commands to loop. Use $Excel Column$ variable for each row in Excel.
+14	     Set text '$Excel Column(1)$' into 01___title in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+15	     Set text '$Excel Column(2)$' into 02frstname in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+16	     Set text '$Excel Column(3)$' into 04lastname in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+17	     Select item by text '$Excel Column(4)$' into '40cc__type' in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+18	     Set text '$Excel Column(5)$' into 41ccnumber in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+19	     Select item by text '$Excel Column(6)$' into '42ccexp_mm' in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+20	     Select item by text '$Excel Column(7)$' into '43ccexp_yy' in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+21	     Click on 'Reset' Command Button in the webpage 'RoboForm Tutorials - Form Filler: Filling Your Information into Online Forms with One Click' 
+22	End Loop
+23	Excel: Close Spreadsheet. Session: Default
